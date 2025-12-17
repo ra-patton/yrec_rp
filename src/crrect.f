@@ -94,10 +94,8 @@ C      *               LNEW,LRESET,LSBC,KSAHA,KENV,KATM,HSTOT,BL,  ! KC 2025-05-
      *               LNEW,LRESET,KSAHA,KENV,KATM,HSTOT,BL,  ! LSBC
      *               TEFFL,X,Z,FPL,FTL,LFLP,PLIM,LC,M)
       ENDIF
-C     7/91 ADD CALL TO MIX
-C     JCZ 231125
-C     changed to .GE.2 instead of .GT. 2
-      IF(ITLVL.GE.2 .AND. DELTS.GT.0.0D0)THEN 
+C 7/91 ADD CALL TO MIX
+      IF(ITLVL.GT.2 .AND. DELTS.GT.0.0D0)THEN
          NSPEC=11
          IF(LEXCOM)NSPEC=15
          DO 2 I = 1,M

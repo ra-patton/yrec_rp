@@ -71,7 +71,7 @@ C regime.  Switched to exclusive usage of OPAL below 50 million K
 C     and switched the ramp to above Z = 0.1.
 c$$$  JCZ 211125 changing temperature limit to 7.0 to accommodate
 C     semiconvection+overshoot HB models, which can reach lower core temperatures
-      IF((Z .GT. 0.1D0) .AND. (TL.GT.7.7D0)) THEN 
+      IF((Z .GT. 0.1D0) .AND. (TL.GT.7.0D0)) THEN 
 C      IF((Z .GT. 0.15D0) .OR.
 C     *     ((ABS(Z-ZENV) .GT. OPTOL).AND..NOT.L2Z)) THEN
          IF(.NOT.LPUREZ) THEN
