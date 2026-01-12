@@ -56,6 +56,7 @@ Information on setting up WSL may be found here: [https://learn.microsoft.com/en
 
 #### Linux, Mac OS, or Windows - Install gfortran using conda/mamba
 
+If you are unable to or do not want to use the above installation method for your platform, you can use an alternative package manager called 'mamba', which works on all supported operating systems.
 Install miniforge in order to obtain the mamba package/environment manager.
 Download from here, [https://conda-forge.org/download](https://conda-forge.org/download) and follow the installation instructions provided.
 
