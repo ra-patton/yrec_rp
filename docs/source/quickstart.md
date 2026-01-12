@@ -23,23 +23,65 @@ Downloading the most recent version of YREC to start out with may not always be 
 
 Once you have obtained a copy of the source files, enter the directory by doing `cd yrec`.
 
-### Compilation
+### Setup
 
-```{admonition} Code Location
-:class: seealso
-:name: code-location
-The code can be found in `src/` (all files ending in `.f`, e.g. `*.f`.) They are assembled into an executable using the script `Makefile`. This will require a Fortran compiler on your machine. The name of the executable can be adjusted, or the location of it moved to your working directory.
-```
+YREC is implemented in the Fortran 77 programming language. To proceed with
+compilation, you will need either the GNU Fortran (`gfortran`) or Intel Fortran
+(`ifort`) compiler. The Intel compiler suite is a commercial product and may be
+available at your institution. `gfortran` is a freely available Fortran
+compiler that is available for many systems and will remain the focus of this
+installation procedure.
 
-To proceed with compilation, you will need the GNU Fortran (`gfortran`) or Intel Fortran (`ifort`) compiler, which you can install using your package manager. For instance, with a Debian-based operating system, try
+
+#### Install gfortran using your operating system's package manager.
+
+##### Linux
+
+For instance, with a Debian-based operating system, try
 
 ```
 sudo apt-get install gfortran
 ```
 
+##### Mac OS
+
+```
+xcode-select --install
+```
+
+##### Windows
+
+YREC can be built with gfortran on Windows by intstalling your Linux distribution of choice through the Windows Subsystem for Linux (WSL), and then following the Linux or mamba procedure to get the compiler.
+Information on setting up WSL may be found here: [https://learn.microsoft.com/en-us/windows/wsl/install](https://learn.microsoft.com/en-us/windows/wsl/install)
+
+#### Linux, Mac OS, or Windows - Install gfortran using conda/mamba
+
+Install miniforge in order to obtain the mamba package/environment manager.
+Download from here, [https://conda-forge.org/download](https://conda-forge.org/download) and follow the installation instructions provided.
+
+Then,
+```
+mamba create -n YREC gfortran
+```
+which will create a new environment called 'YREC' and install the gfortran compiler within it.
+Activate this environment to make the compiler available for use and verify that the compiler is usable by having it display its version.
+
+```
+mamba activate YREC
+gfortran --version
+```
+
+### Building YREC
+
+```{admonition} Code Location
+:class: seealso
+:name: code-location
+The code can be found in `src/` (all files ending in `.f`, e.g. `*.f`.) They are assembled into an executable by using GNU Make which is controlled by the supplied `Makefile`. This will require a Fortran compiler on your machine. The name of the executable can be adjusted, or the location of it moved to your working directory.
+```
+
 Enter the `yrec/src` directory by doing `cd src`, then run the `make` command. It will create a `yrec` binary in the current directory.
 
-This binary can then be moved to another directory, renamed, and then called using `./yrec file.nml1 file.nml2`.
+This binary can then be moved to another directory, if you like, and called using `./yrec file.nml1 file.nml2`.
 
 To install yrec to ~/bin, run the following command:
 
@@ -47,7 +89,7 @@ To install yrec to ~/bin, run the following command:
 make && make install PREFIX=~/bin
 ```
 
-If `~/bin` has been added to your $PATH, you should now be able to call yrec by typing in `yrec`.
+If `~/bin` has been added to your $PATH, you should now be able to call yrec from within any working directory by typing `yrec`.
 
 You can also run it without a PREFIX specified, using:
 
@@ -55,7 +97,7 @@ You can also run it without a PREFIX specified, using:
 make; sudo make install
 ```
 
-Doing this will install to `/usr/local/bin/yrec`, so you can call `yrec` from any directory without modifying your $PATH.
+Doing this will install to `/usr/local/bin/yrec`, so on a multi-user system anyone can call `yrec` from any directory without modifying the $PATH variable.
 
 ## Setting up a run
 
