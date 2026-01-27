@@ -29,3 +29,13 @@ Namelists, models, or tools relevant to YREC are invited to be posted to the [YR
 ### Citing
 
 If you use YREC in your research, please cite one or more of the relevant papers.
+
+[Larson& Demarque 1964](https://ui.adsabs.harvard.edu/abs/1964ApJ...140..524L/abstract): The original Yale stellar evolution code paper.
+
+[Pinsonneault et al. 1989](https://ui.adsabs.harvard.edu/abs/1989ApJ...338..424P/abstract): The paper documenting the addition of rotation to the YREC code.
+
+[Demarque et al. 2008](https://ui.adsabs.harvard.edu/abs/2008Ap%26SS.316...31D/abstract) A paper summarizing the classical model properties of the YREC code, with a focus on convection.
+
+[van Saders & Pinsonneault 2013](https://ui.adsabs.harvard.edu/abs/2013ApJ...776...67V/abstract): This paper updates the description of rotation and magnetized winds in the code.
+
+Pinsonneault et al. 2026: The YREC public release paper
