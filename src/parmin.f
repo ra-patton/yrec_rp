@@ -798,6 +798,34 @@ C been changed during the run, and what the original setting was
 C DBG WRITE OUT ENTIRE NAMELIST TO ISHORT
       WRITE(ISHORT,NML=PHYSICS)
       WRITE(ISHORT,NML=CONTROL)
+
+C Post-process all CONTROL namelist vars that hold path values.
+C Expand any placeholders found in the string with the value taken from a
+C corresponding environment variable, if one is defined.
+      CALL EXPAND_VALUE(FALEX06)
+      CALL EXPAND_VALUE(FLIV95)
+      CALL EXPAND_VALUE(FPUREZ)
+      CALL EXPAND_VALUE(FFIRST)
+      CALL EXPAND_VALUE(FLAST)
+      CALL EXPAND_VALUE(FMODPT)
+      CALL EXPAND_VALUE(FSTOR)
+      CALL EXPAND_VALUE(FTRACK)
+      CALL EXPAND_VALUE(FSHORT)
+      CALL EXPAND_VALUE(FPMOD)
+      CALL EXPAND_VALUE(FPENV)
+      CALL EXPAND_VALUE(FPATM)
+      CALL EXPAND_VALUE(FSNU)
+      CALL EXPAND_VALUE(FSCOMP)
+      CALL EXPAND_VALUE(FOPALE06)
+      CALL EXPAND_VALUE(FcondOpacP)
+      CALL EXPAND_VALUE(FATM)
+      CALL EXPAND_VALUE(FALLARD)
+      CALL EXPAND_VALUE(FSCVH)
+      CALL EXPAND_VALUE(FSCVHE)
+      CALL EXPAND_VALUE(FSCVZ)
+      CALL EXPAND_VALUE(FFERMI)
+
+
 C JVS 02/11 Acoustic depth/ Asteroseismic glitch output. Puts output
 C in the same directory as all other output, and names it with the
 C same conventions
@@ -1458,4 +1486,22 @@ C      1         '   RESCALE & EVOLVE THE PREVIOUS RUN''S LAST MODEL.')
          IF(RESCAL(3,NKIND).GE.0.0D0)  ZENV=RESCAL(3,NKIND)
  1000 CONTINUE
       RETURN
+      END
+
+
+C Replace any "{YREC_INPUT}" placeholder string in the passed variable
+C with the value of the YREC_INPUT environment variable.
+      SUBROUTINE EXPAND_VALUE(NML_VAR)
+      CHARACTER*256 NML_VAR
+      CHARACTER*256 TEMP
+      INTEGER STLEN1, STLEN2
+      IF (NML_VAR(1:12) .EQ. '{YREC_INPUT}') THEN
+          CALL getenv("YREC_INPUT", TEMP)
+          STLEN1 = LEN_TRIM(TEMP)
+          IF (STLEN1 .NE. 0) THEN
+              STLEN2 = LEN_TRIM(NML_VAR)
+              TEMP(STLEN1+1:STLEN1+STLEN2-12) = NML_VAR(13:STLEN2)
+              NML_VAR = TEMP
+          END IF
+      END IF
       END
