@@ -117,10 +117,7 @@
  FFERMI = "input/eos/yale/FERMI.TAB" ! Fermi integral tables for partial degeracy
 
 ! Starting models
- ! FFIRST = "input/models/pms/gs98/p100gs98z01757.ahbl" ! Sample starting model - pre-MS seed
- FFIRST = "startmodels/m1000gs98z018804_Dbl.first" ! Sample starting model - Deuterium birthline
- ! FFIRST = "input/models/ZAMS/m1000gs98z018804_ZAMS.first" ! Sample starting model - ZAMS
- ! FFIRST = "output/testsuite/Test_m1000_feh0_noGS_TAMS.last" ! Sample starting model - TAMS
+ FFIRST = "input/models/dbl/m1000gs98z018804_Dbl.first" ! Sample starting model - Deuterium birthline
 
 ! Output files 
  FLAST = "output/testsuite/Test_solarGS98_yaleeos.last" ! The last converged model is stored here.
