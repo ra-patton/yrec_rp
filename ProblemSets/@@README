@@ -1,0 +1,2 @@
+These namelists are designed to run with problem sets designed for an undergraduate major course. The solar models (Test_solarGS98_base.nml1,2;Test_solarGS98_yaleeos.nml1,2)
+and the 3 ZAMS models (Exercise1_m0p2feh+0GS98_base_ZAMS.nml1,2;Exercise1_m1p0feh+0GS98_base_ZAMS.nml1,2;Exercise1_m9p0feh+0GS98_base_ZAMS.nml1,2) are designed for Exercise1.
