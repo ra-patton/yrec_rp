@@ -45,6 +45,7 @@ C      and extra acoustic depth (calcad.f) output files
 C       CHARACTER*256 FCLCD, YREC1, YREC2, FACAT, FJLAST,FJVS, FJENT, FJDEL
       CHARACTER*256 FCLCD, YREC1, YREC2, FJLAST
       CHARACTER*256 EMPTY
+      CHARACTER*256 CMD  ! Shell command composition for system() call
       INTEGER ICLCD, MRK, IACAT, IJLAST, IJVS, IJENT, IJDEL
 C JVS END
       COMMON/VNEWCB/VNEW(12)
@@ -798,6 +799,14 @@ C been changed during the run, and what the original setting was
 C DBG WRITE OUT ENTIRE NAMELIST TO ISHORT
       WRITE(ISHORT,NML=PHYSICS)
       WRITE(ISHORT,NML=CONTROL)
+
+C Create output directory as specified in the FTRACK value of CONTROL
+C namelist if it doesn't already exist.
+      CMD = 'mkdir -p `dirname '
+      CMD(LEN_TRIM(CMD)+2: LEN_TRIM(FTRACK)+LEN_TRIM(CMD)) = FTRACK(1:LEN_TRIM(FTRACK))
+      CMD(LEN_TRIM(CMD)+1: LEN_TRIM(CMD)+2)  = '`'  ! close dirname call with backtick
+      CALL system(CMD)
+
 C JVS 02/11 Acoustic depth/ Asteroseismic glitch output. Puts output
 C in the same directory as all other output, and names it with the
 C same conventions
