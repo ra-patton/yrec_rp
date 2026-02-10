@@ -824,8 +824,6 @@ C corresponding environment variable, if one is defined.
       CALL EXPAND_VALUE(FSNU)
       CALL EXPAND_VALUE(FSTOR)
       CALL EXPAND_VALUE(FTRACK)
-      CALL EXPAND_VALUE(LCALS)
-      CALL EXPAND_VALUE(LOPAL95)
 
 
 C JVS 02/11 Acoustic depth/ Asteroseismic glitch output. Puts output
