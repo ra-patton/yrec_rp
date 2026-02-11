@@ -66,19 +66,20 @@ path prefix that each represents will be used instead.
 
 Example:
 
-Set environment variable.
+If the environment variable is not defined, the default prefix will be used and
+the value becomes \
+`FOPALE06 = "../../input/eos/opal2006/EOSOPAL06Z0.016492"` at runtime.
+
+Whereas if one sets the environment variable.
 ```
 $ export YREC_INPUT=/path/to/input/tree
 ```
 
-In the CONTROL namelist
+In the CONTROL namelist,
 `FOPALE06 = "{YREC_INPUT}/eos/opal2006/EOSOPAL06Z0.016492"` \
 will expand to \
 `FOPALE06 = "/path/to/input/tree/eos/opal2006/EOSOPAL06Z0.016492"` at runtime.
 
-Whereas if the environment variable is not defined, the default prefix will be used and
-the value becomes \
-`FOPALE06 = "../../input/eos/opal2006/EOSOPAL06Z0.016492"` at runtime.
 
 
 #### Input files
