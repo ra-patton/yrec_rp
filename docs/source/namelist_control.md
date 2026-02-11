@@ -67,7 +67,7 @@ path prefix that each represents will be used instead.
 Example:
 
 In the CONTROL namelist,
-`FOPALE06 = "{YREC_INPUT}/eos/opal2006/EOSOPAL06Z0.016492"` \
+`FOPALE06 = "{YREC_INPUT}/eos/opal2006/EOSOPAL06Z0.016492"`
 
 If the environment variable is not defined, the default prefix will be used and
 the value becomes \
@@ -76,7 +76,7 @@ the value becomes \
 Whereas if one sets the environment variable,
 
 ```
-$ export YREC_INPUT=/path/to/input/tree
+export YREC_INPUT=/path/to/input/tree
 ```
 
 the value will expand to \
