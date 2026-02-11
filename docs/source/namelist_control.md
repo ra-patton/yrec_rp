@@ -1,13 +1,18 @@
 Control Options
 ===============
 
-YREC is generally called by two namelists: the "control" namelist, or `nml1`; and the "physics" namelist, or `nml2`. This page is a reference that will document various current and deprecated possible commands in the namelist files.
+YREC is generally called with two namelist arguments: the "control" namelist, or `nml1`; and the "physics" namelist, or `nml2`.
+This page is a reference that will document various current and deprecated possible values in the namelist files.
+
 
 ## Control (`.nml1`)
 
 ### Run parameters & Kind cards
 
-YREC runs are separated into a number of "phases", referred to as `KINDRN`'s. After completion of a `KINDRN`, execution will move onto the next `KINDRN`. This functionality is designed so that different phases of rescaling, evolving, or rescale & evolving, can be done in a single stellar evolution model run.
+YREC runs are separated into a number of "phases", referred to as `KINDRN`'s.
+After completion of a `KINDRN`, execution will move onto the next `KINDRN`.
+This functionality is designed so that different phases of rescaling, evolving,
+or rescale & evolving, can be done in a single stellar evolution model run.
 
 One `NUMRUN` should be defined, with the number of total `KINDRN`'s. Replace `i` with 1,2,3... etc, for the behavior of each step:
 
@@ -31,8 +36,54 @@ One `NUMRUN` should be defined, with the number of total `KINDRN`'s. Replace `i`
 | `END_XCEN(i)`      | Run stops if `NMODLS(i)` is reached or this central hydrogen is reached (ZAMS: 0.714620, TAMS: 0.0001). |
 | `END_YCEN(i)`      | Run stops if `NMODLS(i)` is reached or this central helium is reached (ZAHB: 0.9700, TAHB: 0.0001). |
 
+### File Location Specifiers
 
-### Input files
+#### Environment Variables
+
+YREC supports substitution of path components within the CONTROL namelist files via a set of placeholders.
+The placeholders may be used as a prefix in path values found in the CONTROL namelist to allow a generalized
+file that will function in a variefy of contexts without requiring edits, e.g., if the location of
+the inputs tree or starting model changes relative to the working directory.
+
+Supported environment variables are:
+`YREC_INPUT`
+`YREC_START`
+`YREC_OUTPUT`
+
+Those names, enclosed in curly braces (`{}`) will be replaced by the
+value of the corresponding environment variable as defined within the YREC execution environment.
+Especially for the YREC_INPUT and YREC_START values, setting an absolute path can provide the
+greatest flexibility in locating input files across multiple potential execution locations.
+
+If any of those variables are not defined in the execution environment, a default value for the
+path prefix that each represents will be used instead.
+
+| Placeholder | Default value   |
+| --------------  | -------------- |
+| `{YREC_INPUT}`  |  `"../../input"`  |
+| `{YREC_START}`  |  `"../../input/models"`  |
+| `{YREC_OUTPUT}` |  `"output"`  (within the working directory where `yrec` is invoked)  |
+
+Example:
+
+In the CONTROL namelist,
+`FOPALE06 = "{YREC_INPUT}/eos/opal2006/EOSOPAL06Z0.016492"`
+
+If the environment variable is not defined, the default prefix will be used and
+the value becomes \
+`FOPALE06 = "../../input/eos/opal2006/EOSOPAL06Z0.016492"` at runtime.
+
+Whereas if one sets the environment variable,
+
+```
+export YREC_INPUT=/path/to/input/tree
+```
+
+the value will expand to \
+`FOPALE06 = "/path/to/input/tree/eos/opal2006/EOSOPAL06Z0.016492"` at runtime.
+
+
+#### Input files
 
 Opacity tables & options:
 
@@ -58,16 +109,16 @@ Equation of state tables:
 | `FSCVHE`      | SCZ EOS table for Y. |
 | `FSCVZ`      | SCZ EoS table for Z (generated from YREC EOS, needed for consistency) |
 | `FFERMI`      | Fermi integral tables for partial degeneracy. |
- 
+
 Starting model:
 
 | Parameter     | Description    |
 | ------------ | -------------- |
 | `FFIRST`      | Starting model file. |
 
-### Output
+#### Output
 
-The starting and last models include only abundances and structure variables. These options allow snapshots to be generated with more information. 
+The starting and last models include only abundances and structure variables. These options allow snapshots to be generated with more information.
 
 Output options:
 
