@@ -798,6 +798,34 @@ C been changed during the run, and what the original setting was
 C DBG WRITE OUT ENTIRE NAMELIST TO ISHORT
       WRITE(ISHORT,NML=PHYSICS)
       WRITE(ISHORT,NML=CONTROL)
+
+C Post-process all CONTROL namelist vars that hold path values.
+C Expand any placeholders found in the string with the value taken from a
+C corresponding environment variable, if one is defined.
+      CALL EXPAND_VALUE(FALEX06)
+      CALL EXPAND_VALUE(FALLARD)
+      CALL EXPAND_VALUE(FATM)
+      CALL EXPAND_VALUE(FcondOpacP)
+      CALL EXPAND_VALUE(FFERMI)
+      CALL EXPAND_VALUE(FFIRST)
+      CALL EXPAND_VALUE(FLAST)
+      CALL EXPAND_VALUE(FLIV95)
+      CALL EXPAND_VALUE(FMODPT)
+      CALL EXPAND_VALUE(FOPALE06)
+      CALL EXPAND_VALUE(FPATM)
+      CALL EXPAND_VALUE(FPENV)
+      CALL EXPAND_VALUE(FPMOD)
+      CALL EXPAND_VALUE(FPUREZ)
+      CALL EXPAND_VALUE(FSCOMP)
+      CALL EXPAND_VALUE(FSCVH)
+      CALL EXPAND_VALUE(FSCVHE)
+      CALL EXPAND_VALUE(FSCVZ)
+      CALL EXPAND_VALUE(FSHORT)
+      CALL EXPAND_VALUE(FSNU)
+      CALL EXPAND_VALUE(FSTOR)
+      CALL EXPAND_VALUE(FTRACK)
+
+
 C JVS 02/11 Acoustic depth/ Asteroseismic glitch output. Puts output
 C in the same directory as all other output, and names it with the
 C same conventions
@@ -1458,4 +1486,51 @@ C      1         '   RESCALE & EVOLVE THE PREVIOUS RUN''S LAST MODEL.')
          IF(RESCAL(3,NKIND).GE.0.0D0)  ZENV=RESCAL(3,NKIND)
  1000 CONTINUE
       RETURN
+      END
+
+
+C Replace any defined "{YREC_XXX}" placeholder string in the passed
+C variable with the value of the corresponding environment variable.
+      SUBROUTINE EXPAND_VALUE(NML_VAR)
+      PARAMETER (NUM_ENVVARS=3) ! Number of possible env. vars.
+      CHARACTER*256 NML_VAR
+      CHARACTER*256 TEMP
+      CHARACTER*256 PHOLDERS(NUM_ENVVARS)
+      CHARACTER*256 DEFAULTS(NUM_ENVVARS)
+      CHARACTER*256 PHOLDER
+      INTEGER STLEN1, STLEN2, PH_LEN, DEF_LEN
+C Each placeholder (env var name enclosed in curly braces) to be
+C supported for expansion in namelists, along with default value in the
+C case where the var is not defined in the execution environment.
+C The number of assignment pairs here must match the value of the
+C parameter NUM_ENVVARS, above.
+      PHOLDERS(1) = "{YREC_INPUT}"
+      DEFAULTS(1) = "../../input"
+
+      PHOLDERS(2) = "{YREC_START}"
+      DEFAULTS(2) = "../../input/models"
+
+      PHOLDERS(3) = "{YREC_OUTPUT}"
+      DEFAULTS(3) = "output"
+
+      DO 5000 i=1, NUM_ENVVARS
+        PH_LEN = LEN_TRIM(PHOLDERS(i))
+        DEF_LEN = LEN_TRIM(DEFAULTS(i))
+        PHOLDER = PHOLDERS(i)(1:PH_LEN)
+
+        IF (NML_VAR(1:PH_LEN) .EQ. PHOLDER) THEN  ! If placeholder
+            CALL getenv(PHOLDER(2:PH_LEN-1), TEMP)
+            STLEN1 = LEN_TRIM(TEMP)
+            STLEN2 = LEN_TRIM(NML_VAR)
+            IF (STLEN1 .NE. 0) THEN     ! If env var set
+                TEMP(STLEN1+1:STLEN1+STLEN2-PH_LEN) = NML_VAR(PH_LEN+1:STLEN2)
+                !print *,"Override: ",TEMP(1:LEN_TRIM(TEMP))
+            ELSE                        ! No env var. Use default path.
+                TEMP(1:DEF_LEN) = DEFAULTS(i)(1:LEN_TRIM(DEFAULTS(i)))
+                TEMP(DEF_LEN+1:DEF_LEN+STLEN2) = NML_VAR(PH_LEN+1:STLEN2)
+                !print *,"default: ",TEMP(1:LEN_TRIM(TEMP))
+            END IF
+            NML_VAR = TEMP
+        END IF
+5000  CONTINUE
       END
