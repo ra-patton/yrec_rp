@@ -40,8 +40,8 @@ One `NUMRUN` should be defined, with the number of total `KINDRN`'s. Replace `i`
 
 #### Environment Variables
 
-YREC Supports substitution of path components within the CONTROL namelist files via a set of placeholders.
-The placeholders may be used as a prefix on path values found in the CONTROL namelist to allow a generalized
+YREC supports substitution of path components within the CONTROL namelist files via a set of placeholders.
+The placeholders may be used as a prefix in path values found in the CONTROL namelist to allow a generalized
 file that will function in a variefy of contexts without requiring edits, e.g., if the location of
 the inputs tree or starting model changes relative to the working directory.
 
@@ -52,15 +52,17 @@ Supported environment variables are:
 
 Those names, enclosed in curly braces (`{}`) will be replaced by the
 value of the corresponding environment variable as defined within the YREC execution environment.
+Especially for the YREC_INPUT and YREC_START values, setting an absolute path can provide the
+greatest flexibility in locating input files across multiple potential execution locations.
 
 If any of those variables are not defined in the execution environment, a default value for the
 path prefix that each represents will be used instead.
 
 | Placeholder | Default value   |
 | --------------  | -------------- |
-| `{YREC_INPUT}`     `"../../input"`  |
-| `{YREC_START}`     `"../../input/models"`  \
-| `{YREC_OUTPUT}`    `"output"`  (within the working directory where `yrec` is invoked)  |
+| `{YREC_INPUT}`  |  `"../../input"`  |
+| `{YREC_START}`  |  `"../../input/models"`  |
+| `{YREC_OUTPUT}` |  `"output"`  (within the working directory where `yrec` is invoked)  |
 
 Example:
 
@@ -70,12 +72,13 @@ $ export YREC_INPUT=/path/to/input/tree
 ```
 
 In the CONTROL namelist
-`FOPALE06 = "{YREC_INPUT}/eos/opal2006/EOSOPAL06Z0.016492"`
-will expand to
+`FOPALE06 = "{YREC_INPUT}/eos/opal2006/EOSOPAL06Z0.016492"` \
+will expand to \
 `FOPALE06 = "/path/to/input/tree/eos/opal2006/EOSOPAL06Z0.016492"` at runtime.
 
 Whereas if the environment variable is not defined, the default prefix will be used and
-the value becomes `FOPALE06 = "../../input/eos/opal2006/EOSOPAL06Z0.016492"` at runtime.
+the value becomes \
+`FOPALE06 = "../../input/eos/opal2006/EOSOPAL06Z0.016492"` at runtime.
 
 
 #### Input files
