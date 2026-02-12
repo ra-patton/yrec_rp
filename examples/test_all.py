@@ -19,9 +19,10 @@ config = cfp.ConfigParser()
 config.read("pytest.ini")
 yrec_exe = os.path.abspath( config['paths']['yrec'] )
 tests = [x for x in config['paths']['tests'].split('\n') if len(x) > 0 ]
-float_abs_tol = float(config['tolerances']['float_abs_tol'])
+float_frac_tol = float(config['tolerances']['float_frac_tol'])
 int_abs_tol = int(config['tolerances']['int_abs_tol'])
 ref_dir = config['paths']['reference_dir']
+show_output = config.getboolean('options','show_output_upon_failure')
 
 if not os.path.exists(yrec_exe):
     raise FileNotFoundError(f"YREC executable {yrec_exe} not found!")
@@ -112,9 +113,18 @@ def filevals_differ(ref_file, out_file, float_tol, int_tol):
                 except IndexError as ex:
                     difference = True
                     break
-                if type(val) == float and diff > float_tol:
-                    locs.append(i)
-                    difference = True
+
+                # Check against fractional floating point tolerance
+                if type(val) == float:
+                    if val != 0:
+                        if abs(diff/val) > float_tol:
+                            locs.append(i)
+                            difference = True
+                    else:
+                        if diff != 0:
+                            locs.append(i)
+                            difference = True
+
                 if type(val) == int and diff > int_tol:
                     locs.append(i)
                     difference = True
@@ -203,8 +213,9 @@ def test_yrec(tdir, nml1, nml2):
             stdout=sp.PIPE,
             stderr=sp.PIPE)
     os.chdir(startdir)
-    print(proc.stdout.decode())
-    print(proc.stderr.decode())
+    if show_output:
+        print(proc.stdout.decode()[:-10])
+        print(proc.stderr.decode()[:-10])
 
     # Fail on abnormal termination
     assert proc.returncode == 0, "Program terminated abnormally"
@@ -231,7 +242,7 @@ def test_yrec(tdir, nml1, nml2):
             shutil.copyfile(out, ref)
             print(f"{out} copied to reference")
         print(f"--- Comparing standard to {out}\n")
-        if filevals_differ(ref, out, float_abs_tol, int_abs_tol):
+        if filevals_differ(ref, out, float_frac_tol, int_abs_tol):
             outputs_identical = False
     assert outputs_identical, "Output differs from reference standard"
 
