@@ -1,0 +1,6 @@
+Molecular opacity tables are stored here. The current recommended version is
+from Ferguson et al. 2005, and called alex06 in the code for obscure reasons. The concatenated table read in by the code, for the gs98 mixture, is in the file
+
+alexmol06gs98.tab
+
+The raw individual tables are in the alex06 folder. Subfolders there contain raw tables for alpha enhanced mixtures. The alex06ags04 folder contains raw files for the Asplund, Grevesse, and Sauval (2004) mixture. The legacy folder contains depreciated tables - the earlier version of the Ferguson 2005 opacities, and Kurucz molecular opacities.

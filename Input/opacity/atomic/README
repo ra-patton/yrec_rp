@@ -1,0 +1,14 @@
+For helium burning phases, use the PURECO.DBGLAOL table in the ./lanl folder. This interpolated between helium and a c/o mixture. The hydrogen burning tables below are also required for helium burning models.
+
+For hydrogen burning phases, the code requires a table from either the opal (Iglesias & Rogers 1996) or op05 (Badnell et al. 2005) codes, each of which have their own directories. The majority of new mixtures us the OP opacities.
+The detailed mixture of elements in each table can be found in the file headers. Current recommended opacity tables are below. For these mixtures, YREC can adjust to have the correct CNO abundances for the mixture.
+
+For the Grevesse & Sauval (1998) mixture, there are op05 opacities (GS98.OP17) and opal opacities (GS98hz).
+There is an alpha-enhanced (+0.2) GS98 table for op05 (GS98alpha02.OP17).
+
+For the low solar metallicity mixture, the most recent compilation is Amarsi et al. 2021 (AAG21). The only source for this mixture is op05 (AAG2021zx0.0187.tab).
+
+There are also two tables for the Magg et al. (2022) mixture, either with photospheric (M22P) or meteoritic (M22M) relative heavy element abundances. Both are available in the op05 folder, Magg22_phot_zx0.0225.tab and Magg22_met_zx0.0226.tab.
+
+Other opacity files, both for older mixtures and other tables, are in the legacy folder.
+

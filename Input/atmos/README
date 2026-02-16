@@ -1,0 +1,7 @@
+This folder contains tablulated results for full model atmosphere solutions. The three currently supported families are Allard(1999), Kurucz(1991), and Castelli & Kurucz 2003.
+
+***Note that the code does not check these tables for consistency, so care must be taken to use the correct metallicity for the run.*** Also note that the mixture is fixed, and changes in surface metallicity over the run, from effects like microscopic diffusion, are not accounted for.
+
+For Allard, the code only supports solar metallicity tables, although AMES-Condu2 has data for other mixtures. The recommended table is Nextgen2.all; AMES-Cond2.all and Ames-Dusty2.all are also supported, and represent different treatments of dust in very cool atmospheres.
+
+For Kurucz, there are different tables for different metallicities; the assumed [Fe/H] is at the start of the header, and the file names include a shorthand for metallicity (atmk1990m10.tab is for [Fe/H] of minus 1.0; atmk1990p05.tab is for [Fe/H]=+0.5 and so forth. Scripts can be used to interpolate between tables for metallicities not in the folder.  
