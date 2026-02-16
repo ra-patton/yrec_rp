@@ -69,16 +69,16 @@
  FPUREZ = "/Users/jzinn/yrec/yrec/input/opacity/atomic/lanl/PURECO.DBGLAOL" ! Pure Y/Z  opacity table path
   
  FFIRST = "/Users/jzinn/yrec/yrec/input/models/zahb/100mSOLpreZAHB.last" ! The last converged model is stored here.
- FLAST = "output/Solar_m1p0feh+0p0_GN93_MESA_TAHB.first" ! The last converged model is stored here.
- FMODPT = "output/Solar_m1p0feh+0p0_GN93_MESA_TAHB.full" ! No longer used.
- FSTOR = "output/Solar_m1p0feh+0p0_GN93_MESA_TAHB.store" ! Model snapshots during the run are stored here.
- FTRACK = "output/Solar_m1p0feh+0p0_GN93_MESA_TAHB.track" ! Global variables as a function of time are stored here.
- FSHORT = "output/Solar_m1p0feh+0p0_GN93_MESA_TAHB.short" ! Details about the numerics of the model run are stored here.
- FPMOD = "output/Solar_m1p0feh+0p0_GN93_MESA_TAHB.pmod" ! Pulsation output_gn93_mod for the interior model.
- FPENV = "output/Solar_m1p0feh+0p0_GN93_MESA_TAHB.penv"! Pulsation output_gn93_mod for the envelope model.
- FPATM = "output/Solar_m1p0feh+0p0_GN93_MESA_TAHB.atm" ! Pulsation output_gn93_mod for the atmosphere model.
- FSNU = "output/Solar_m1p0feh+0p0_GN93_MESA_TAHB.snu" ! No longer used (formally, output_gn93_mod if LSNU = T).
- FSCOMP = "output/Solar_m1p0feh+0p0_GN93_MESA_TAHB.excomp" ! No longer used (light elements vs. time, now included in track file)
+ FLAST = "{YREC_OUTPUT}/Solar_m1p0feh+0p0_GN93_MESA_TAHB.first" ! The last converged model is stored here.
+ FMODPT = "{YREC_OUTPUT}/Solar_m1p0feh+0p0_GN93_MESA_TAHB.full" ! No longer used.
+ FSTOR = "{YREC_OUTPUT}/Solar_m1p0feh+0p0_GN93_MESA_TAHB.store" ! Model snapshots during the run are stored here.
+ FTRACK = "{YREC_OUTPUT}/Solar_m1p0feh+0p0_GN93_MESA_TAHB.track" ! Global variables as a function of time are stored here.
+ FSHORT = "{YREC_OUTPUT}/Solar_m1p0feh+0p0_GN93_MESA_TAHB.short" ! Details about the numerics of the model run are stored here.
+ FPMOD = "{YREC_OUTPUT}/Solar_m1p0feh+0p0_GN93_MESA_TAHB.pmod" ! Pulsation output_gn93_mod for the interior model.
+ FPENV = "{YREC_OUTPUT}/Solar_m1p0feh+0p0_GN93_MESA_TAHB.penv"! Pulsation output_gn93_mod for the envelope model.
+ FPATM = "{YREC_OUTPUT}/Solar_m1p0feh+0p0_GN93_MESA_TAHB.atm" ! Pulsation output_gn93_mod for the atmosphere model.
+ FSNU = "{YREC_OUTPUT}/Solar_m1p0feh+0p0_GN93_MESA_TAHB.snu" ! No longer used (formally, output_gn93_mod if LSNU = T).
+ FSCOMP = "{YREC_OUTPUT}/Solar_m1p0feh+0p0_GN93_MESA_TAHB.excomp" ! No longer used (light elements vs. time, now included in track file)
 
  FOPALE06 = "/Users/jzinn/yrec/yrec/input/eos/opal2006/EOSOPAL06Z0.001937326" ! OPAL 2006 EoS table path.
  FcondOpacP = "/Users/jzinn/yrec/yrec/input/opacity/conductive/potekhin/condall06.d" ! Conductive opacity table path.
