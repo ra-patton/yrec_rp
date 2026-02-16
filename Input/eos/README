@@ -1,0 +1,9 @@
+This folder contains data for equation of state solutions.
+
+The Fermi integral solutions in the yale folder are required.
+
+If the SCV EoS (Saumon, Chabrier & van Horn 1995) is desired, the X Y Z (H, He, metal) EoS tables in the SCV folder are required.
+
+If the OPAL 2006 (Rogers & Nayfonov 2002, with an unpublished 2005 update) is desired, the user can select one of the tables in the opal2006 subdirectory. Note that each table is for a single metallicity. The base tables from which these are derived are in the /base directory, along with a code to interpolate to a user-specified metallicity.
+
+Note that the code goes from OPAL2006 -> SCV -> Yale in order of preference. So, if all 3 are selected, the code will try each one in turn; there is a ramp between solutions close to table edges.
