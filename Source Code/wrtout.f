@@ -703,12 +703,6 @@ C      *            LPRT, TEFFL, HCOMP, NKK, DAGE, DDAGE, JENV)  ! KC 2025-05-31
 
 C JVS END
        ENDIF
-C JVS 08/25 Added the option to output a stitched version of the interior and envelope 
-C solutions.
-      IF(LSTCH.AND.MOD(MODEL,NPRTMOD).EQ.0) THEN
-          CALL STITCH(HCOMP,HR,HP,HD,HS,HT,HL,HS1,OMEGA,ETA2,HI,R0,HJM,
-     *          FP,FT,TEFFL,HSTOT,BL,M,LC,MODEL)
-      ENDIF
 
       RETURN
       END
