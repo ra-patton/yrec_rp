@@ -1,15 +1,10 @@
  $CONTROL  
 
  DESCRIP(1) = "model5.1 test suite. Core He-burning model Z = 0.003, diffusion, no rotation" ! Label for output (optional)  
- DESCRIP(2) = "Kur Atm OPAL06+SCV EOS GN93" ! Second line label for output (optional)
+ DESCRIP(2) = "Gray Atm OPAL06+SCV EOS GN93" ! Second line label for output (optional)
 
  ! Option to adjust the CNO mixture to be consistent with the mixture used in the opacity tables
- ISETMIX=1 ! 0 = do not adjust 1 = use specified mixture (AMIX below) 2 = custom mixture (see parmin.f for variables)
- AMIX = 'CUS'
- ZXMIX=2.450000e-02
- FRAC_C=1.732581D-01
- FRAC_N=5.314464D-02
- FRAC_O=4.821778D-01
+ ISETMIX=0 ! 0 = do not adjust 1 = use specified mixture (AMIX below) 2 = custom mixture (see parmin.f for variables)
  ! Option to adjust the D/He3/Li6/Li7/Be9 abundances and the CNO isotope ratios to be consistent with a specified solar reference
  ISETISO = 0! 0 = do not adjust 1 = use specified mixture (AISO below) 2 = custom mixture (see parmin.f for variables)
  LCALS = .FALSE. ! Toggle to auto-calibrate solar Y and alpha to match the solar R and L at the age of the Sun. Does not enforce correct Z/X for mixture.
@@ -130,16 +125,16 @@
  FPUREZ = "{YREC_INPUT}/opacity/atomic/lanl/PURECO.DBGLAOL" ! Pure Y/Z  opacity table path
  
 FFIRST = "{YREC_INPUT}/models/zahb/070mSOLpreZAHB.last"
- FLAST = "{YREC_OUTPUT}/zahb_zp003_070.first" ! The last converged model is stored here.
- FMODPT = "{YREC_OUTPUT}/zahb_zp003_070.full" ! No longer used.
- FSTOR = "{YREC_OUTPUT}/zahb_zp003_070.store" ! Model snapshots during the run are stored here.
- FTRACK = "{YREC_OUTPUT}/zahb_zp003_070.track" ! Global variables as a function of time are stored here.
- FSHORT = "{YREC_OUTPUT}/zahb_zp003_070.short" ! Details about the numerics of the model run are stored here.
- FPMOD = "{YREC_OUTPUT}/zahb_zp003_070.pmod" ! Pulsation output for the interior model.
- FPENV = "{YREC_OUTPUT}/zahb_zp003_070.penv"! Pulsation output for the envelope model.
- FPATM = "{YREC_OUTPUT}/zahb_zp003_070.atm" ! Pulsation output for the atmosphere model.
- FSNU = "{YREC_OUTPUT}/zahb_zp003_070.snu" ! No longer used (formally, output if LSNU = T).
- FSCOMP = "{YREC_OUTPUT}/zahb_zp003_070.excomp" ! No longer used (light elements vs. time, now included in track file)
+ FLAST = "{YREC_OUTPUT}/ZAHB_m0p7feh-0p75_GN93_TAHB.first" ! The last converged model is stored here.
+ FMODPT = "{YREC_OUTPUT}/ZAHB_m0p7feh-0p75_GN93_TAHB.full" ! No longer used.
+ FSTOR = "{YREC_OUTPUT}/ZAHB_m0p7feh-0p75_GN93_TAHB.store" ! Model snapshots during the run are stored here.
+ FTRACK = "{YREC_OUTPUT}/ZAHB_m0p7feh-0p75_GN93_TAHB.track" ! Global variables as a function of time are stored here.
+ FSHORT = "{YREC_OUTPUT}/ZAHB_m0p7feh-0p75_GN93_TAHB.short" ! Details about the numerics of the model run are stored here.
+ FPMOD = "{YREC_OUTPUT}/ZAHB_m0p7feh-0p75_GN93_TAHB.pmod" ! Pulsation output for the interior model.
+ FPENV = "{YREC_OUTPUT}/ZAHB_m0p7feh-0p75_GN93_TAHB.penv"! Pulsation output for the envelope model.
+ FPATM = "{YREC_OUTPUT}/ZAHB_m0p7feh-0p75_GN93_TAHB.atm" ! Pulsation output for the atmosphere model.
+ FSNU = "{YREC_OUTPUT}/ZAHB_m0p7feh-0p75_GN93_TAHB.snu" ! No longer used (formally, output if LSNU = T).
+ FSCOMP = "{YREC_OUTPUT}/ZAHB_m0p7feh-0p75_GN93_TAHB.excomp" ! No longer used (light elements vs. time, now included in track file)
  FOPALE06 = "{YREC_INPUT}/eos/opal2006/EOSOPAL06Z0.003000000" ! OPAL 2006 EoS table path.
  FcondOpacP = "{YREC_INPUT}/opacity/conductive/potekhin/condall06.d" ! Conductive opacity table path.
  FATM = "{YREC_INPUT}/atmos/kurucz/atmk1990p00.tab" ! Model atmosphere look-up table for Kurucz and Kurucz/Castelli.
