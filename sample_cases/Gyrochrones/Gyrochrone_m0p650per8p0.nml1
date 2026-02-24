@@ -83,7 +83,7 @@
  FcondOpacP = "{YREC_INPUT}/opacity/conductive/potekhin/condall06.d" ! Conductive opacity table path.
 
 ! Equation of state tables
- FOPALE06 = "EOSOPAL06Z0.01822325463082438" ! OPAL 2006 EoS table path.
+ FOPALE06 = "{YREC_INPUT}/eos/opal2006/EOSOPAL06Z0.018223255" ! OPAL 2006 EoS table path.
  FATM = "{YREC_INPUT}/atmos/kurucz/atmk1990p00.tab" ! Model atmosphere look-up table for Kurucz and Kurucz/Castelli.
  FALLARD = "{YREC_INPUT}/atmos/allard/Nextgen2.all" ! Allard model atmosphere look-up table (solar Z only).
  FSCVH = "{YREC_INPUT}/eos/scv/h_tab_i.dat" ! SCZ EoS table for X
@@ -95,18 +95,18 @@
  FFIRST = "{YREC_START}/m0700gs98z018804_Dbl.first" ! Sample starting model - Deuterium birthline
 
 ! Output files 
- FLAST = "{YREC_OUTPUT}/samplecases/Gyrochrones/Gyrochrone_m0p650per8p0.last" ! The last converged model is stored here.
- FSTOR = "{YREC_OUTPUT}/samplecases/Gyrochrones/Gyrochrone_m0p650per8p0.store" ! Model snapshots during the run are stored here.
- FTRACK = "{YREC_OUTPUT}/samplecases/Gyrochrones/Gyrochrone_m0p650per8p0.track" ! Global variables as a function of time are stored here.
- FSHORT = "{YREC_OUTPUT}/samplecases/Gyrochrones/Gyrochrone_m0p650per8p0.short" ! Details about the numerics of the model run are stored here.
- FPMOD = "{YREC_OUTPUT}/samplecases/Gyrochrones/Gyrochrone_m0p650per8p0.pmod" ! Pulsation output for the interior model.
- FPENV = "{YREC_OUTPUT}/samplecases/Gyrochrones/Gyrochrone_m0p650per8p0.penv"! Pulsation output for the envelope model.
- FPATM = "{YREC_OUTPUT}/samplecases/Gyrochrones/Gyrochrone_m0p650per8p0.patm" ! Pulsation output for the atmosphere model.
+ FLAST = "{YREC_OUTPUT}/sample_cases/Gyrochrones/Gyrochrone_m0p650per8p0.last" ! The last converged model is stored here.
+ FSTOR = "{YREC_OUTPUT}/sample_cases/Gyrochrones/Gyrochrone_m0p650per8p0.store" ! Model snapshots during the run are stored here.
+ FTRACK = "{YREC_OUTPUT}/sample_cases/Gyrochrones/Gyrochrone_m0p650per8p0.track" ! Global variables as a function of time are stored here.
+ FSHORT = "{YREC_OUTPUT}/sample_cases/Gyrochrones/Gyrochrone_m0p650per8p0.short" ! Details about the numerics of the model run are stored here.
+ FPMOD = "{YREC_OUTPUT}/sample_cases/Gyrochrones/Gyrochrone_m0p650per8p0.pmod" ! Pulsation output for the interior model.
+ FPENV = "{YREC_OUTPUT}/sample_cases/Gyrochrones/Gyrochrone_m0p650per8p0.penv"! Pulsation output for the envelope model.
+ FPATM = "{YREC_OUTPUT}/sample_cases/Gyrochrones/Gyrochrone_m0p650per8p0.patm" ! Pulsation output for the atmosphere model.
   
 ! Legacy output files
- FMODPT = "{YREC_OUTPUT}/samplecases/Gyrochrones/Gyrochrone_m0p650per8p0.full" ! No longer used.
- FSNU = "{YREC_OUTPUT}/samplecases/Gyrochrones/Gyrochrone_m0p650per8p0.snu" ! No longer used (formally, output if LSNU = T).
- FSCOMP = "{YREC_OUTPUT}/samplecases/Gyrochrones/Gyrochrone_m0p650per8p0.excomp" ! No longer used (light elements vs. time, now included in track file)
+ FMODPT = "{YREC_OUTPUT}/sample_cases/Gyrochrones/Gyrochrone_m0p650per8p0.full" ! No longer used.
+ FSNU = "{YREC_OUTPUT}/sample_cases/Gyrochrones/Gyrochrone_m0p650per8p0.snu" ! No longer used (formally, output if LSNU = T).
+ FSCOMP = "{YREC_OUTPUT}/sample_cases/Gyrochrones/Gyrochrone_m0p650per8p0.excomp" ! No longer used (light elements vs. time, now included in track file)
 
 ! Custom mixture controls - CNO enabled if ISETMIX = 2, Light elements if ISETISO=2
 
