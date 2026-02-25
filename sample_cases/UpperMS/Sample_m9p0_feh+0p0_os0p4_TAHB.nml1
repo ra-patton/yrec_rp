@@ -95,21 +95,21 @@
 ! Starting models
 
  !FFIRST = "{YREC_START}/dbl/m9000gs98z018804_Dbl.first" ! Sample starting model - Deuterium birthline
- FFIRST = "{YREC_START}/samplecase/Sample_m9p0_feh+0p0_os0p4_TAMS.last" ! Sample starting model - TAMS
+ FFIRST = "{YREC_START}/sample_cases/Sample_m9p0_feh+0p0_os0p4_TAMS.last" ! Sample starting model - TAMS
 
 ! Output files 
- FLAST = "{YREC_START}/samplecase/Sample_m9p0_feh+0p0_os0p4_TAHB.last" ! The last converged model is stored here.
- FSTOR = "{YREC_OUTPUT}/samplecase/UpperMS/Sample_m9p0_feh+0p0_os0p4_TAHB.store" ! Model snapshots during the run are stored here.
- FTRACK = "{YREC_OUTPUT}/samplecase/UpperMS/Sample_m9p0_feh+0p0_os0p4_TAHB.track" ! Global variables as a function of time are stored here.
- FSHORT = "{YREC_OUTPUT}/samplecase/UpperMS/Sample_m9p0_feh+0p0_os0p4_TAHB.short" ! Details about the numerics of the model run are stored here.
- FPMOD = "{YREC_OUTPUT}/samplecase/UpperMS/Sample_m9p0_feh+0p0_os0p4_TAHB.pmod" ! Pulsation output for the interior model.
- FPENV = "{YREC_OUTPUT}/samplecase/UpperMS/Sample_m9p0_feh+0p0_os0p4_TAHB.penv"! Pulsation output for the envelope model.
- FPATM = "{YREC_OUTPUT}/samplecase/UpperMS/Sample_m9p0_feh+0p0_os0p4_TAHB.patm" ! Pulsation output for the atmosphere model.
+ FLAST = "{YREC_OUTPUT}/sample_cases/UpperMS/Sample_m9p0_feh+0p0_os0p4_TAHB.last" ! The last converged model is stored here.
+ FSTOR = "{YREC_OUTPUT}/sample_cases/UpperMS/Sample_m9p0_feh+0p0_os0p4_TAHB.store" ! Model snapshots during the run are stored here.
+ FTRACK = "{YREC_OUTPUT}/sample_cases/UpperMS/Sample_m9p0_feh+0p0_os0p4_TAHB.track" ! Global variables as a function of time are stored here.
+ FSHORT = "{YREC_OUTPUT}/sample_cases/UpperMS/Sample_m9p0_feh+0p0_os0p4_TAHB.short" ! Details about the numerics of the model run are stored here.
+ FPMOD = "{YREC_OUTPUT}/sample_cases/UpperMS/Sample_m9p0_feh+0p0_os0p4_TAHB.pmod" ! Pulsation output for the interior model.
+ FPENV = "{YREC_OUTPUT}/sample_cases/UpperMS/Sample_m9p0_feh+0p0_os0p4_TAHB.penv"! Pulsation output for the envelope model.
+ FPATM = "{YREC_OUTPUT}/sample_cases/UpperMS/Sample_m9p0_feh+0p0_os0p4_TAHB.patm" ! Pulsation output for the atmosphere model.
   
 ! Legacy output files
- FMODPT = "{YREC_OUTPUT}/samplecase/UpperMS/Sample_m9p0_feh+0p0_os0p4_TAHB.full" ! No longer used.
- FSNU = "{YREC_OUTPUT}/samplecase/UpperMS/Sample_m9p0_feh+0p0_os0p4_TAHB.snu" ! No longer used (formally, output if LSNU = T).
- FSCOMP = "{YREC_OUTPUT}/samplecase/UpperMS/Sample_m9p0_feh+0p0_os0p4_TAHB.excomp" ! No longer used (light elements vs. time, now included in track file)
+ FMODPT = "{YREC_OUTPUT}/sample_cases/UpperMS/Sample_m9p0_feh+0p0_os0p4_TAHB.full" ! No longer used.
+ FSNU = "{YREC_OUTPUT}/sample_cases/UpperMS/Sample_m9p0_feh+0p0_os0p4_TAHB.snu" ! No longer used (formally, output if LSNU = T).
+ FSCOMP = "{YREC_OUTPUT}/sample_cases/UpperMS/Sample_m9p0_feh+0p0_os0p4_TAHB.excomp" ! No longer used (light elements vs. time, now included in track file)
 
 ! Custom mixture controls - CNO enabled if ISETMIX = 2, Light elements if ISETISO=2
 
@@ -134,3 +134,4 @@
 ! XB11_INI = 4.405e-9 ! Initial D mass fraction, L21 mix (4.885e-9 L25) - placeholder, not currently used
 
  $END  
+
