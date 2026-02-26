@@ -45,7 +45,7 @@ END_YCEN(1) = 0.5 ! Run stops if NMODLS(I) is reached or this central helium is 
  LPUREZ = .TRUE.  
  FPUREZ = "{YREC_INPUT}/opacity/lanl/PURECO.DBGLAOL"  
   
- FFIRST = "{YREC_INPUT}/tams/Test_3Msolar_GS_rot_gray_OPALSCV_SF2_GS98_OP_CF10_TAMS.last"
+ FFIRST = "{YREC_START}/tams/Test_3Msolar_GS_rot_gray_OPALSCV_SF2_GS98_OP_CF10_TAMS.last"
  FLAST = "{YREC_OUTPUT}/examples/giant_differential_rotation/Test_3Msolar_GS_rot_gray_OPALSCV_SF2_GS98_OP_CF10_RGp2diffrotI3cz2.last"
  FMODPT = "{YREC_OUTPUT}/examples/giant_differential_rotation/Test_3Msolar_GS_rot_gray_OPALSCV_SF2_GS98_OP_CF10_RGp2diffrotI3cz2.full"
  FSTOR = "{YREC_OUTPUT}/examples/giant_differential_rotation/Test_3Msolar_GS_rot_gray_OPALSCV_SF2_GS98_OP_CF10_RGp2diffrotI3cz2.store"

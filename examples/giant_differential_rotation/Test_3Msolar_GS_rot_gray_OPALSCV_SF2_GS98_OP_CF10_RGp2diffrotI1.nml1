@@ -36,14 +36,14 @@ END_YCEN(1) = 0.5 ! Run stops if NMODLS(I) is reached or this central helium is 
  LPULSE = .FALSE.  
   
  LALEX06 = .TRUE.  
- FALEX06 = "{YREC_START}/opacity/alex06/alexmol06gs98.tab"  
+ FALEX06 = "{YREC_INPUT}/opacity/alex06/alexmol06gs98.tab"  
    
  LOPAL95 = .TRUE.  
  ZOPAL951 = 0.017968  
- FLIV95 = "{YREC_START}/opacity/opal95/GS98.OP17"  
+ FLIV95 = "{YREC_INPUT}/opacity/opal95/GS98.OP17"  
   
  LPUREZ = .TRUE.  
- FPUREZ = "{YREC_START}/opacity/lanl/PURECO.DBGLAOL"  
+ FPUREZ = "{YREC_INPUT}/opacity/lanl/PURECO.DBGLAOL"  
   
  FFIRST = "{YREC_START}/tams/Test_3Msolar_GS_rot_gray_OPALSCV_SF2_GS98_OP_CF10_TAMS.last"
  FLAST = "{YREC_OUTPUT}/examples/giant_differential_rotation/Test_3Msolar_GS_rot_gray_OPALSCV_SF2_GS98_OP_CF10_RGp2diffrotI1.last"
@@ -57,13 +57,13 @@ END_YCEN(1) = 0.5 ! Run stops if NMODLS(I) is reached or this central helium is 
  FSNU = "{YREC_OUTPUT}/examples/giant_differential_rotation/Test_3Msolar_GS_rot_gray_OPALSCV_SF2_GS98_OP_CF10_RGp2diffrotI1.snu"
  FSCOMP = "{YREC_OUTPUT}/examples/giant_differential_rotation/Test_3Msolar_GS_rot_gray_OPALSCV_SF2_GS98_OP_CF10_RGp2diffrotI1.excomp"
   
- FOPALE06 = "{YREC_START}/eos/opal2006/EOSOPAL06Z0.018776"  
- FcondOpacP = "{YREC_START}/opacity/potekhin/condall06.d"  
- FATM = "{YREC_START}/atmos/kurucz/atmk1990p00.tab"
- FALLARD = "{YREC_START}/atmos/allard/Nextgen2.all"  
- FSCVH = "{YREC_START}/eos/scv/h_tab_i.dat"  
- FSCVHE = "{YREC_START}/eos/scv/he_tab_i.dat"  
- FSCVZ = "{YREC_START}/eos/scv/z_tab_i.dat"    
- FFERMI = "{YREC_START}/eos/yale/FERMI.TAB"  
+ FOPALE06 = "{YREC_INPUT}/eos/opal2006/EOSOPAL06Z0.018776"  
+ FcondOpacP = "{YREC_INPUT}/opacity/potekhin/condall06.d"  
+ FATM = "{YREC_INPUT}/atmos/kurucz/atmk1990p00.tab"
+ FALLARD = "{YREC_INPUT}/atmos/allard/Nextgen2.all"  
+ FSCVH = "{YREC_INPUT}/eos/scv/h_tab_i.dat"  
+ FSCVHE = "{YREC_INPUT}/eos/scv/he_tab_i.dat"  
+ FSCVZ = "{YREC_INPUT}/eos/scv/z_tab_i.dat"    
+ FFERMI = "{YREC_INPUT}/eos/yale/FERMI.TAB"  
   
  $END  
