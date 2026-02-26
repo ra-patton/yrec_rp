@@ -61,14 +61,14 @@
  LPULSE = .FALSE. ! If T, generate pulsation output. LSTATM AND LSTENV are needed to get data for those regions (highly recommended if LPULSE is T)  
   
  LALEX06 = .TRUE. ! If T, use Ferguson+2005 molecular opacities (recommended)
- FALEX06 = "/Users/jzinn/yrec/yrec/input/opacity/molecular/alex06/alexmol06gs98.tab" ! Molecular opacity table path  
+ FALEX06 = "{YREC_INPUT}/opacity/molecular/alex06/alexmol06gs98.tab" ! Molecular opacity table path  
  LOPAL95 = .TRUE. ! If T, use atomic opacities in the OP/OPAL format (recommended).
  ZOPAL951 = 0.02 ! Generate a surface mixture table with this Z. Speeds up models without diffusion.
- FLIV95 = "/Users/jzinn/yrec/yrec/input/opacity/atomic/legacy/opal95/GN93hz" ! Atomic opacity table path
+ FLIV95 = "{YREC_INPUT}/opacity/atomic/legacy/opal95/GN93hz" ! Atomic opacity table path
  LPUREZ = .TRUE. 
- FPUREZ = "/Users/jzinn/yrec/yrec/input/opacity/atomic/lanl/PURECO.DBGLAOL" ! Pure Y/Z  opacity table path
+ FPUREZ = "{YREC_INPUT}/opacity/atomic/lanl/PURECO.DBGLAOL" ! Pure Y/Z  opacity table path
   
- FFIRST = "/Users/jzinn/yrec/yrec/input/models/zahb/100mSOLpreZAHB.last" ! The last converged model is stored here.
+ FFIRST = "{YREC_INPUT}/models/zahb/100mSOLpreZAHB.last"
  FLAST = "{YREC_OUTPUT}/Solar_m1p0feh+0p0_GN93_MESA_TAHB.first" ! The last converged model is stored here.
  FMODPT = "{YREC_OUTPUT}/Solar_m1p0feh+0p0_GN93_MESA_TAHB.full" ! No longer used.
  FSTOR = "{YREC_OUTPUT}/Solar_m1p0feh+0p0_GN93_MESA_TAHB.store" ! Model snapshots during the run are stored here.
@@ -80,13 +80,13 @@
  FSNU = "{YREC_OUTPUT}/Solar_m1p0feh+0p0_GN93_MESA_TAHB.snu" ! No longer used (formally, output_gn93_mod if LSNU = T).
  FSCOMP = "{YREC_OUTPUT}/Solar_m1p0feh+0p0_GN93_MESA_TAHB.excomp" ! No longer used (light elements vs. time, now included in track file)
 
- FOPALE06 = "/Users/jzinn/yrec/yrec/input/eos/opal2006/EOSOPAL06Z0.001937326" ! OPAL 2006 EoS table path.
- FcondOpacP = "/Users/jzinn/yrec/yrec/input/opacity/conductive/potekhin/condall06.d" ! Conductive opacity table path.
- FATM = "/Users/jzinn/yrec/yrec/input/atmos/kurucz/atmk1990p00.tab" ! Model atmosphere look-up table for Kurucz and Kurucz/Castelli.
- FALLARD = "/Users/jzinn/yrec/yrec/input/atmos/allard/Nextgen2.all" ! Allard model atmosphere look-up table (solar Z only).
- FSCVH = "/Users/jzinn/yrec/yrec/input/eos/scv/h_tab_i.dat" ! SCZ EoS table for X
- FSCVHE = "/Users/jzinn/yrec/yrec/input/eos/scv/he_tab_i.dat" ! SCZ EoS table for Y
- FSCVZ = "/Users/jzinn/yrec/yrec/input/eos/scv/z_tab_i.dat" ! SCZ EoS table for Z (generated from YREC EoS, needed for consistency)
- FFERMI = "/Users/jzinn/yrec/yrec/input/eos/yale/FERMI.TAB" ! Fermi integral tables for partial degeracy
+ FOPALE06 = "{YREC_INPUT}/eos/opal2006/EOSOPAL06Z0.020000000" ! OPAL 2006 EoS table path.
+ FcondOpacP = "{YREC_INPUT}/opacity/conductive/potekhin/condall06.d" ! Conductive opacity table path.
+ FATM = "{YREC_INPUT}/atmos/kurucz/atmk1990p00.tab" ! Model atmosphere look-up table for Kurucz and Kurucz/Castelli.
+ FALLARD = "{YREC_INPUT}/atmos/allard/Nextgen2.all" ! Allard model atmosphere look-up table (solar Z only).
+ FSCVH = "{YREC_INPUT}/eos/scv/h_tab_i.dat" ! SCZ EoS table for X
+ FSCVHE = "{YREC_INPUT}/eos/scv/he_tab_i.dat" ! SCZ EoS table for Y
+ FSCVZ = "{YREC_INPUT}/eos/scv/z_tab_i.dat" ! SCZ EoS table for Z (generated from YREC EoS, needed for consistency)
+ FFERMI = "{YREC_INPUT}/eos/yale/FERMI.TAB" ! Fermi integral tables for partial degeracy
   
  $END  
