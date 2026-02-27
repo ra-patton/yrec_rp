@@ -86,18 +86,18 @@
   FFIRST = "{YREC_START}/tams/Grid_m6p6feh-0p5GS98_std25_TAMS.last" ! Sample starting model - TAMS
 
 ! Output files 
- FLAST =  "{YREC_OUTPUT}/grid/Grid_m6p6feh-0p5GS98_std25_ZAHB.last" ! The last converged model is stored here.
- FSTOR =  "{YREC_OUTPUT}/grid/Grid_m6p6feh-0p5GS98_std25_ZAHB.store" ! Model snapshots during the run are stored here.
- FTRACK =  "{YREC_OUTPUT}/grid/Grid_m6p6feh-0p5GS98_std25_ZAHB.track" ! Global variables as a function of time are stored here.
- FSHORT =  "{YREC_OUTPUT}/grid/Grid_m6p6feh-0p5GS98_std25_ZAHB.short" ! Details about the numerics of the model run are stored here.
- FPMOD =  "{YREC_OUTPUT}/grid/Grid_m6p6feh-0p5GS98_std25_ZAHB.pmod" ! Pulsation output for the interior model.
- FPENV =  "{YREC_OUTPUT}/grid/Grid_m6p6feh-0p5GS98_std25_ZAHB.penv" ! Pulsation output for the envelope model.
- FPATM =  "{YREC_OUTPUT}/grid/Grid_m6p6feh-0p5GS98_std25_ZAHB.atm" ! Pulsation output for the atmosphere model.
+ FLAST =  "{YREC_OUTPUT}/Grid_m6p6feh-0p5GS98_std25_ZAHB.last" ! The last converged model is stored here.
+ FSTOR =  "{YREC_OUTPUT}/Grid_m6p6feh-0p5GS98_std25_ZAHB.store" ! Model snapshots during the run are stored here.
+ FTRACK =  "{YREC_OUTPUT}/Grid_m6p6feh-0p5GS98_std25_ZAHB.track" ! Global variables as a function of time are stored here.
+ FSHORT =  "{YREC_OUTPUT}/Grid_m6p6feh-0p5GS98_std25_ZAHB.short" ! Details about the numerics of the model run are stored here.
+ FPMOD =  "{YREC_OUTPUT}/Grid_m6p6feh-0p5GS98_std25_ZAHB.pmod" ! Pulsation output for the interior model.
+ FPENV =  "{YREC_OUTPUT}/Grid_m6p6feh-0p5GS98_std25_ZAHB.penv" ! Pulsation output for the envelope model.
+ FPATM =  "{YREC_OUTPUT}/Grid_m6p6feh-0p5GS98_std25_ZAHB.atm" ! Pulsation output for the atmosphere model.
   
 ! Legacy output files
- FMODPT =  "{YREC_OUTPUT}/grid/Grid_m6p6feh-0p5GS98_std25_ZAHB.full" ! No longer used.
- FSNU =  "{YREC_OUTPUT}/grid/Grid_m6p6feh-0p5GS98_std25_ZAHB.snu" ! No longer used (formally, output if LSNU = T).
- FSCOMP =  "{YREC_OUTPUT}/grid/Grid_m6p6feh-0p5GS98_std25_ZAHB.excomp" ! No longer used (light elements vs. time, now included in track file)
+ FMODPT =  "{YREC_OUTPUT}/Grid_m6p6feh-0p5GS98_std25_ZAHB.full" ! No longer used.
+ FSNU =  "{YREC_OUTPUT}/Grid_m6p6feh-0p5GS98_std25_ZAHB.snu" ! No longer used (formally, output if LSNU = T).
+ FSCOMP =  "{YREC_OUTPUT}/Grid_m6p6feh-0p5GS98_std25_ZAHB.excomp" ! No longer used (light elements vs. time, now included in track file)
 
 ! Custom mixture controls - CNO enabled if ISETMIX = 2, Light elements if ISETISO=2
 
