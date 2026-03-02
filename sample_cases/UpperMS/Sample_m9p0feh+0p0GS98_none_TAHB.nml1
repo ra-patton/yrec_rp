@@ -97,18 +97,18 @@ $CONTROL
  !FFIRST = "{YREC_START}/sample_cases/Sample_m9000_feh0_none_TAMS.last" ! Sample starting model - TAMS
 
 ! Output files 
- FLAST = "{YREC_OUTPUT}/sample_cases/UpperMS/Sample_m9p0_feh+0p0_none_TAHB.last" ! The last converged model is stored here.
- FSTOR = "{YREC_OUTPUT}/sample_cases/UpperMS/Sample_m9p0_feh+0p0_none_TAHB.store" ! Model snapshots during the run are stored here.
- FTRACK = "{YREC_OUTPUT}/sample_cases/UpperMS/Sample_m9p0_feh+0p0_none_TAHB.track" ! Global variables as a function of time are stored here.
- FSHORT = "{YREC_OUTPUT}/sample_cases/UpperMS/Sample_m9p0_feh+0p0_none_TAHB.short" ! Details about the numerics of the model run are stored here.
- FPMOD = "{YREC_OUTPUT}/sample_cases/UpperMS/Sample_m9p0_feh+0p0_none_TAHB.pmod" ! Pulsation output for the interior model.
- FPENV = "{YREC_OUTPUT}/sample_cases/UpperMS/Sample_m9p0_feh+0p0_none_TAHB.penv"! Pulsation output for the envelope model.
- FPATM = "{YREC_OUTPUT}/sample_cases/UpperMS/Sample_m9p0_feh+0p0_none_TAHB.patm" ! Pulsation output for the atmosphere model.
+ FLAST = "{YREC_OUTPUT}/sample_cases/UpperMS/Sample_m9p0feh+0p0GS98_none_TAHB.last" ! The last converged model is stored here.
+ FSTOR = "{YREC_OUTPUT}/sample_cases/UpperMS/Sample_m9p0feh+0p0GS98_none_TAHB.store" ! Model snapshots during the run are stored here.
+ FTRACK = "{YREC_OUTPUT}/sample_cases/UpperMS/Sample_m9p0feh+0p0GS98_none_TAHB.track" ! Global variables as a function of time are stored here.
+ FSHORT = "{YREC_OUTPUT}/sample_cases/UpperMS/Sample_m9p0feh+0p0GS98_none_TAHB.short" ! Details about the numerics of the model run are stored here.
+ FPMOD = "{YREC_OUTPUT}/sample_cases/UpperMS/Sample_m9p0feh+0p0GS98_none_TAHB.pmod" ! Pulsation output for the interior model.
+ FPENV = "{YREC_OUTPUT}/sample_cases/UpperMS/Sample_m9p0feh+0p0GS98_none_TAHB.penv"! Pulsation output for the envelope model.
+ FPATM = "{YREC_OUTPUT}/sample_cases/UpperMS/Sample_m9p0feh+0p0GS98_none_TAHB.patm" ! Pulsation output for the atmosphere model.
   
 ! Legacy output files
- FMODPT = "{YREC_OUTPUT}/sample_cases/UpperMS/Sample_m9p0_feh+0p0_none_TAHB.full" ! No longer used.
- FSNU = "{YREC_OUTPUT}/sample_cases/UpperMS/Sample_m9p0_feh+0p0_none_TAHB.snu" ! No longer used (formally, output if LSNU = T).
- FSCOMP = "{YREC_OUTPUT}/sample_cases/UpperMS/Sample_m9p0_feh+0p0_none_TAHB.excomp" ! No longer used (light elements vs. time, now included in track file)
+ FMODPT = "{YREC_OUTPUT}/sample_cases/UpperMS/Sample_m9p0feh+0p0GS98_none_TAHB.full" ! No longer used.
+ FSNU = "{YREC_OUTPUT}/sample_cases/UpperMS/Sample_m9p0feh+0p0GS98_none_TAHB.snu" ! No longer used (formally, output if LSNU = T).
+ FSCOMP = "{YREC_OUTPUT}/sample_cases/UpperMS/Sample_m9p0feh+0p0GS98_none_TAHB.excomp" ! No longer used (light elements vs. time, now included in track file)
 
 ! Custom mixture controls - CNO enabled if ISETMIX = 2, Light elements if ISETISO=2
 
@@ -133,4 +133,5 @@ $CONTROL
 ! XB11_INI = 4.405e-9 ! Initial D mass fraction, L21 mix (4.885e-9 L25) - placeholder, not currently used
 
  $END  
+
 
