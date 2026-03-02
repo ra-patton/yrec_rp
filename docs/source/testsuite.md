@@ -74,7 +74,7 @@ All tracks are solar metallicity unless otherwise noted. Standard suite includes
 | `Test_m9000_feh0_base_TAMS`      | A 9.0$M_\odot$ base case. No diffusion, no rotation, and with a gray atmosphere. Run to the TAMS. |
 | `Test_m9000_feh0_base_TAHB`      | A 9.0$M_\odot$ base case. No diffusion, no rotation, and with a gray atmosphere. Run to the TAHB. |
 | `Test_m9000_feh0_base_yaleeos_TAMS`      | A 9.0$M_\odot$ base case. No diffusion, no rotation, and with a gray atmosphere. Run to the TAMS. |
-| `Test_m9000_feh0_base_yaleeos_TAHB`      | A 9.0$M_\odot$ base case. No diffusion, no rotation, and with a gray atmosphere. Run to the TAHB. |
+| `Test_m9000_feh0_base_yaleeos_TAHB`      | A 9.0$M_\odot$ base case with the Yale EoS. No diffusion, no rotation, and with a gray atmosphere. Run to the TAHB. |
 
 
 ## Test Suite Extras (`examples/`)
