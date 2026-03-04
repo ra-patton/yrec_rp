@@ -112,6 +112,8 @@ A negative value means that this component is not being rescaled (except for `SE
 
 **END_YCEN**(I) - Stop runs if the model central helium drops below this value.
 
+**NMODLS**(I) - Stop after this number of models.
+
 ## Namelist options reference
 
 [Control namelist](namelist_control.md)
