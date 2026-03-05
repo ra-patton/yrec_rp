@@ -1,7 +1,7 @@
  $CONTROL  
 
  DESCRIP(1) = "model5.1 test suite. Core helium burning, no diffusion, no rotation. Diffusion-calibrated. Overshooting. PARSEC v2.0 core mass--matched."
- DESCRIP(2) = "Gray Atm OPAL06+SCV EOS GN93" ! Second line label for output (optional)
+ DESCRIP(2) = "Gray Atm OPAL06+SCV EOS GS98" ! Second line label for output (optional)
  
  ISETMIX=0 ! 0 = do not adjust 1 = use specified mixture (AMIX below) 2 = custom mixture (see parmin.f for variables)
  AMIX = 'GS98'
