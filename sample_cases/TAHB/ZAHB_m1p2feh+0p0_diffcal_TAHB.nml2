@@ -55,12 +55,12 @@
  ! Convective mixing parameters
  LSEMIC = .FALSE. ! Include semi-convection (t/f). Ensure that this is on for core He-burning models.
  DPENV = 1.0 ! Full mixing from center to fractional depth in mass. Not a standard option.
- LOVSTC = .FALSE. ! Include core overshoot (t/f). Note: unless LOVAD=T, this is overmixing only, and does not impact the thermal structure
- ALPHAC = 0.2 ! Core overshoot in Hp
+ LOVSTC = .TRUE. ! Include core overshoot (t/f). Note: unless LOVAD=T, this is overmixing only, and does not impact the thermal structure
+ ALPHAC = 0.25 ! Core overshoot in Hp
  LOVMAX = .FALSE. ! Alternative test (only checked if LOVSTC = T) to avoid pathologies in overshoot of small cores.
  BETAC = 0.15 ! Alternative test - maximum overshoot in fraction of physical size of core
- LOVSTE = .FALSE. ! Include envelope overshoot (t/f)
- ALPHAE = 0.5  ! Envelope overshoot in Hp
+ LOVSTE = .TRUE. ! Include envelope overshoot (t/f)
+ ALPHAE = 0.513  ! Envelope overshoot in Hp
  LOVSTM = .FALSE. ! Include overshoot in intermediate CZ (recommend not on, needs to be checked)
  ALPHAM = 0.0  ! Intermediate overshoot (above and below) in Hp
  LADOV = .FALSE. ! Experimental option to enforce adiabatic overshoot - should be tested before use, and new code for derivatives should be added.

@@ -118,23 +118,23 @@
    
  LOPAL95 = .TRUE. ! If T, use atomic opacities in the OP/OPAL format (recommended).
  ZOPAL951 = 0.003 ! Generate a surface mixture table with this Z. Speeds up models without diffusion.
- FLIV95 = "/Users/jzinn/yrec/yrec/input/opacity/opal95/GN93hz" ! Atomic opacity table path
+ FLIV95 = "{YREC_INPUT}/input/opacity/opal95/GN93hz" ! Atomic opacity table path
   FLIV95 = "{YREC_INPUT}/opacity/atomic/legacy/opal95/GS98.OP17" ! Atomic opacity table path
   
  LPUREZ = .TRUE. 
  FPUREZ = "{YREC_INPUT}/opacity/atomic/lanl/PURECO.DBGLAOL" ! Pure Y/Z  opacity table path
  
-FFIRST = "{YREC_INPUT}/models/zahb/070mSOLpreZAHB.last"
- FLAST = "{YREC_OUTPUT}/ZAHB_m0p7feh-0p75_GN93_TAHB.first" ! The last converged model is stored here.
- FMODPT = "{YREC_OUTPUT}/ZAHB_m0p7feh-0p75_GN93_TAHB.full" ! No longer used.
- FSTOR = "{YREC_OUTPUT}/ZAHB_m0p7feh-0p75_GN93_TAHB.store" ! Model snapshots during the run are stored here.
- FTRACK = "{YREC_OUTPUT}/ZAHB_m0p7feh-0p75_GN93_TAHB.track" ! Global variables as a function of time are stored here.
- FSHORT = "{YREC_OUTPUT}/ZAHB_m0p7feh-0p75_GN93_TAHB.short" ! Details about the numerics of the model run are stored here.
- FPMOD = "{YREC_OUTPUT}/ZAHB_m0p7feh-0p75_GN93_TAHB.pmod" ! Pulsation output for the interior model.
- FPENV = "{YREC_OUTPUT}/ZAHB_m0p7feh-0p75_GN93_TAHB.penv"! Pulsation output for the envelope model.
- FPATM = "{YREC_OUTPUT}/ZAHB_m0p7feh-0p75_GN93_TAHB.atm" ! Pulsation output for the atmosphere model.
- FSNU = "{YREC_OUTPUT}/ZAHB_m0p7feh-0p75_GN93_TAHB.snu" ! No longer used (formally, output if LSNU = T).
- FSCOMP = "{YREC_OUTPUT}/ZAHB_m0p7feh-0p75_GN93_TAHB.excomp" ! No longer used (light elements vs. time, now included in track file)
+FFIRST = "{YREC_START}/zahb/070mSOLpreZAHB.last"
+ FLAST = "{YREC_OUTPUT}/Test_m0p7feh-0p75_GN93_TAHB.last" ! The last converged model is stored here.
+ FMODPT = "{YREC_OUTPUT}/Test_m0p7feh-0p75_GN93_TAHB.full" ! No longer used.
+ FSTOR = "{YREC_OUTPUT}/Test_m0p7feh-0p75_GN93_TAHB.store" ! Model snapshots during the run are stored here.
+ FTRACK = "{YREC_OUTPUT}/Test_m0p7feh-0p75_GN93_TAHB.track" ! Global variables as a function of time are stored here.
+ FSHORT = "{YREC_OUTPUT}/Test_m0p7feh-0p75_GN93_TAHB.short" ! Details about the numerics of the model run are stored here.
+ FPMOD = "{YREC_OUTPUT}/Test_m0p7feh-0p75_GN93_TAHB.pmod" ! Pulsation output for the interior model.
+ FPENV = "{YREC_OUTPUT}/Test_m0p7feh-0p75_GN93_TAHB.penv"! Pulsation output for the envelope model.
+ FPATM = "{YREC_OUTPUT}/Test_m0p7feh-0p75_GN93_TAHB.atm" ! Pulsation output for the atmosphere model.
+ FSNU = "{YREC_OUTPUT}/Test_m0p7feh-0p75_GN93_TAHB.snu" ! No longer used (formally, output if LSNU = T).
+ FSCOMP = "{YREC_OUTPUT}/Test_m0p7feh-0p75_GN93_TAHB.excomp" ! No longer used (light elements vs. time, now included in track file)
  FOPALE06 = "{YREC_INPUT}/eos/opal2006/EOSOPAL06Z0.003000000" ! OPAL 2006 EoS table path.
  FcondOpacP = "{YREC_INPUT}/opacity/conductive/potekhin/condall06.d" ! Conductive opacity table path.
  FATM = "{YREC_INPUT}/atmos/kurucz/atmk1990p00.tab" ! Model atmosphere look-up table for Kurucz and Kurucz/Castelli.
