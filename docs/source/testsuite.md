@@ -19,58 +19,59 @@ All tracks are solar metallicity unless otherwise noted. Standard suite includes
 
 | Model Name     | Description    |
 | ------------ | -------------- |
-| `Test_solar_base`      | A solar model taken to be the "base case". No diffusion, no rotation, and with a gray atmosphere. |
-| `Test_solar_dif`      | The base case, with diffusion turned on: `LDIFY`, `LDIFZ`, and `LDIFLI` set to `.TRUE.`. |
-| `Test_solar_dif_rot`      | The base case, with diffusion turned on, and rotation turned on: `LROT`, `LNEW0`, `LWNEW`, `LDISK` set to `.TRUE.`. |
-| `Test_solar_dif_rot_fast`      | The base case, with diffusion turned on, and rotation turned on. `TDISK` and `FC` reduced relative to the `_rot` case. |
-| `Test_solar_dif_rot_solid`      | The base case, with diffusion turned on, and rotation turned on. Solid body rotation `LSOLID` enforced, and `FC` increased relative to `_rot`. |
-| `Test_solar_allard`      | The base case, but with an Allard model atmosphere (`KTTAU = 4`). |
-| `Test_solar_kurucz`      | The base case, but with a Kurucz model atmosphere (`KTTAU = 3`). |
-| `Test_solar_SF3`      | The base case, but with custom cross sections from Solar Fusion III set (`S0_*`). |
-| `Test_solar_yaleeos`      | The base case, but with the Yale EOS, `LOPALE06 = .FALSE.` and `LSCV = .FALSE.`. |
+| `Test_solarGS98_base`      | A solar model taken to be the "base case". No diffusion, no rotation, and with a gray atmosphere. |
+| `Test_solarGS98_dif`      | The base case, with diffusion turned on: `LDIFY`, `LDIFZ`, and `LDIFLI` set to `.TRUE.`. |
+| `Test_solarAAG21_dif`      | The base case, with diffusion turned on and the AAG21 mixture: `LDIFY`, `LDIFZ`, and `LDIFLI` set to `.TRUE.`. |
+| `Test_solarM22M_dif`      | The base case, with diffusion turned on and the Magg22 mixture: `LDIFY`, `LDIFZ`, and `LDIFLI` set to `.TRUE.`. |
+| `Test_solarGS98_dif_rot`      | The base case, with diffusion turned on, and rotation turned on: `LROT`, `LNEW0`, `LWNEW`, `LDISK` set to `.TRUE.`. |
+| `Test_solarGS98_dif_rot_fast`      | The base case, with diffusion turned on, and rotation turned on. `TDISK` and `FC` reduced relative to the `_rot` case. |
+| `Test_solarGS98_dif_rot_solid`      | The base case, with diffusion turned on, and rotation turned on. Solid body rotation `LSOLID` enforced, and `FC` increased relative to `_rot`. |
+| `Test_solarGS98_kurucz`      | The base case, but with a Kurucz model atmosphere (`KTTAU = 3`). |
+| `Test_solarGS98_SF3`      | The base case, but with custom cross sections from Solar Fusion III set (`S0_*`). |
+| `Test_solarGS98_yaleeos`      | The base case, but with the Yale EOS, `LOPALE06 = .FALSE.` and `LSCV = .FALSE.`. |
 
 ### [Brown dwarf models](testsuite/brown_dwarf.md)
 
 
 | Model Name     | Description    |
 | ------------ | -------------- |
-| `Test_m0030_feh0_allard_15Gyr`      | A 0.03$M_\odot$ model with the Allard model atmosphere (`KTTAU = 4`), run to 15 Gyr. |
-| `Test_m0050_feh0_allard_15Gyr`      | A 0.05$M_\odot$ model with the Allard model atmosphere (`KTTAU = 4`), run to 15 Gyr. |
-| `Test_m0080_feh0_allard_15Gyr`      | A 0.08$M_\odot$ model with the Allard model atmosphere (`KTTAU = 4`), run to 15 Gyr. |
+| `Test_m0p03feh0+0GS98_allard_15Gyr`      | A 0.03$M_\odot$ model with the Allard model atmosphere (`KTTAU = 4`), run to 15 Gyr. |
+| `Test_m0p05feh0+0GS98_allard_15Gyr`      | A 0.05$M_\odot$ model with the Allard model atmosphere (`KTTAU = 4`), run to 15 Gyr. |
+| `Test_m0p08feh0+0GS98_allard_15Gyr`      | A 0.08$M_\odot$ model with the Allard model atmosphere (`KTTAU = 4`), run to 15 Gyr. |
 
 ### [Zero age main sequence (ZAMS) models](testsuite/evolve_to_zams.md)
 
 
 | Model Name     | Description    |
 | ------------ | -------------- |
-| `Test_m0100_feh0_base_ZAMS`      | A 0.1$M_\odot$ model taken to be the "base case". No diffusion, no rotation, and with a gray atmosphere, run to the ZAMS. |
-| `Test_m0100_feh0_allard_ZAMS`      | A 0.1$M_\odot$ base model with the Allard model atmosphere (`KTTAU = 4`) instead, run to the ZAMS. |
-| `Test_m0100_feh0_spot25_ZAMS`      | A 0.1$M_\odot$ base model with the starspot filling fraction set to 0.25, run to the ZAMS; `LSDEPTH = .TRUE.`, `SPOTF = 0.25`, and `SPOTX = 0.85`. |
-| `Test_m0300_feh0_allard_ZAMS`      | A 0.3$M_\odot$ base model with the Allard model atmosphere (`KTTAU = 4`) instead, run to the ZAMS. Note: the `Test_m0300_feh0_base_ZAMS` model exists, but is classified under `Evolution`. |
-| `Test_m0300_feh0_spot25_ZAMS`      | A 0.3$M_\odot$ base model with the starspot filling fraction set to 0.25, run to the ZAMS; `LSDEPTH = .TRUE.`, `SPOTF = 0.25`, and `SPOTX = 0.85`. |
-| `Test_m0300_feh0_scveos_ZAMS`      | A 0.3$M_\odot$ base model, but with the SCV EOS, `LOPALE06 = .FALSE.`. |
-| `Test_m0300_feh0_yaleeos_ZAMS`      | A 0.3$M_\odot$ base model, but with the Yale EOS, `LOPALE06 = .FALSE.` and `LSCV = .FALSE.`. |
-| `Test_m1000_feh0_spot25_ZAMS`      | A 1.0$M_\odot$ base model with the starspot filling fraction set to 0.25, run to the ZAMS; `LSDEPTH = .TRUE.`, `SPOTF = 0.25`, and `SPOTX = 0.85`. |
+| `Test_m0p1feh0+0GS98_base_ZAMS`      | A 0.1$M_\odot$ model taken to be the "base case". No diffusion, no rotation, and with a gray atmosphere, run to the ZAMS. |
+| `Test_m0p1feh0+0Gs98_allard_ZAMS`      | A 0.1$M_\odot$ base model with the Allard model atmosphere (`KTTAU = 4`) instead, run to the ZAMS. |
+| `Test_m0p1feh0+0GS98_spot25_ZAMS`      | A 0.1$M_\odot$ base model with the starspot filling fraction set to 0.25, run to the ZAMS; `LSDEPTH = .TRUE.`, `SPOTF = 0.25`, and `SPOTX = 0.85`. |
+| `Test_m0p3feh0+0GS98_allard_ZAMS`      | A 0.3$M_\odot$ base model with the Allard model atmosphere (`KTTAU = 4`) instead, run to the ZAMS. Note: the `Test_m0300_feh0_base_ZAMS` model exists, but is classified under `Evolution`. |
+| `Test_m0p3feh0+0GS98_spot25_ZAMS`      | A 0.3$M_\odot$ base model with the starspot filling fraction set to 0.25, run to the ZAMS; `LSDEPTH = .TRUE.`, `SPOTF = 0.25`, and `SPOTX = 0.85`. |
+| `Test_m0p3feh0+0GS98_scveos_ZAMS`      | A 0.3$M_\odot$ base model, but with the SCV EOS, `LOPALE06 = .FALSE.`. |
+| `Test_m0p3feh0+0GS98_yaleeos_ZAMS`      | A 0.3$M_\odot$ base model, but with the Yale EOS, `LOPALE06 = .FALSE.` and `LSCV = .FALSE.`. |
+| `Test_m1p0feh0+0GS98_spot25_ZAMS`      | A 1.0$M_\odot$ base model with the starspot filling fraction set to 0.25, run to the ZAMS; `LSDEPTH = .TRUE.`, `SPOTF = 0.25`, and `SPOTX = 0.85`. |
 
 ### [Terminal age main sequence (TAMS) models](testsuite/evolve_to_tams.md)
 
 
 | Model Name     | Description    |
 | ------------ | -------------- |
-| `Test_m1000_feh0_dif_ZAMS`      | A 1.0$M_\odot$ base case, with diffusion turned on: `LDIFY`, `LDIFZ`, and `LDIFLI` set to `.TRUE.`, run to the TAMS. |
-| `Test_m1400_feh0_dif_ZAMS`      | A 1.4$M_\odot$ base case, with diffusion turned on: `LDIFY`, `LDIFZ`, and `LDIFLI` set to `.TRUE.`, run to the TAMS. |
+| `Test_m1p0feh0+0GS98_dif_ZAMS`      | A 1.0$M_\odot$ base case, with diffusion turned on: `LDIFY`, `LDIFZ`, and `LDIFLI` set to `.TRUE.`, run to the TAMS. |
+| `Test_m1p4feh0+0GS98_dif_ZAMS`      | A 1.4$M_\odot$ base case, with diffusion turned on: `LDIFY`, `LDIFZ`, and `LDIFLI` set to `.TRUE.`, run to the TAMS. |
 
 ### [Evolution models](testsuite/evolution.md)
 
 
 | Model Name     | Description    |
 | ------------ | -------------- |
-| `Test_m0300_feh0_base_ZAMS`      | A 0.3$M_\odot$ base case. No diffusion, no rotation, and with a gray atmosphere. Run to the ZAMS. |
-| `Test_m0300_feh0_base_TAMS`      | A 0.3$M_\odot$ base case. No diffusion, no rotation, and with a gray atmosphere. Run to the TAMS. |
-| `Test_m1000_feh0_base_TAMS`      | A 1.0$M_\odot$ base case. No diffusion, no rotation, and with a gray atmosphere. Run to the TAMS. |
-| `Test_m1000_feh0_base_HeIgnite`      | A 1.0$M_\odot$ base case. No diffusion, no rotation, and with a gray atmosphere. Run to He ignition. |
-| `Test_m3000_feh0_base_TAMS`      | A 3.0$M_\odot$ base case. No diffusion, no rotation, and with a gray atmosphere. Run to the TAMS. |
-| `Test_m3000_feh0_base_ZAHB`      | A 3.0$M_\odot$ base case. No diffusion, no rotation, and with a gray atmosphere. Run to the ZAHB. |
+| `Test_m0p3feh0+0GS98_base_ZAMS`      | A 0.3$M_\odot$ base case. No diffusion, no rotation, and with a gray atmosphere. Run to the ZAMS. |
+| `Test_m0p3feh0+0GS98_base_TAMS`      | A 0.3$M_\odot$ base case. No diffusion, no rotation, and with a gray atmosphere. Run to the TAMS. |
+| `Test_m1p0feh0+0GS98_base_TAMS`      | A 1.0$M_\odot$ base case. No diffusion, no rotation, and with a gray atmosphere. Run to the TAMS. |
+| `Test_m1p0feh0+0GS98_base_HeIgnite`      | A 1.0$M_\odot$ base case. No diffusion, no rotation, and with a gray atmosphere. Run to He ignition. |
+| `Test_m3p0feh0+0GS98_base_TAMS`      | A 3.0$M_\odot$ base case. No diffusion, no rotation, and with a gray atmosphere. Run to the TAMS. |
+| `Test_m3p0feh0+0GS98_base_ZAHB`      | A 3.0$M_\odot$ base case. No diffusion, no rotation, and with a gray atmosphere. Run to the ZAHB. |
 | `Test_m9p0feh0+0GS98_base_TAMS`      | A 9.0$M_\odot$ base case. No diffusion, no rotation, and with a gray atmosphere. Run to the TAMS. |
 | `Test_m9p0feh0+0GS98_base_TAHB`      | A 9.0$M_\odot$ base case. No diffusion, no rotation, and with a gray atmosphere. Run to the TAHB. |
 | `Test_m9p0feh0+0GS98_yaleeos_TAMS`      | A 9.0$M_\odot$ base case with the Yale EoS. No diffusion, no rotation, and with a gray atmosphere. Run to the TAMS. |
